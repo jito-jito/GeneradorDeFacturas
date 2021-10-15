@@ -1,0 +1,152 @@
+.invoice {
+    &-main {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        padding: 0 5%;
+        box-sizing: border-box;
+        background: rgb(255,255,255);
+        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(243,244,211,1) 100%);
+
+        @media screen and (min-width: 650px) {
+            display: block;
+            position: relative;
+            width: 100%;
+            padding: 0 7%;
+            background: transparent;
+        }
+        @media screen and (min-width: 730px) {
+            padding: 0 10%;
+        }
+        @media screen and (min-width: 950px) {
+            padding: 0 15%;
+        }
+        @media screen and (min-width: 1200px) {
+            width: 45%;
+            height: 100%;
+            padding: 0;
+        }
+        
+        
+    }
+
+    &-title {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    &-menu {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 60px;
+        height: 60px;
+        margin: 0px 25px 25px 0;
+        border-radius: 30px;
+        border: none;
+        box-shadow: 4px 5px 27px 20px rgba(0,0,0,0.1);
+        background: white;
+
+        @media screen and (min-width: 650px) {
+            display: none;
+        }
+        
+
+        img {
+            width: 25px;
+            height: 35px;
+        }
+    }
+
+    &-form {
+        @include flex;
+        flex-direction: column; 
+        button {
+            border: none;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+    }
+
+    &-discount {
+        margin: 10px;
+        height: 45px;
+        background-color: #c8dac8;
+    
+    }
+
+    &-send {
+        margin: 25px;
+        height: 45px;
+        width: 90px;
+        background-color: #f3f4d3;
+    }
+}
+
+
+.table {
+    &-container {
+        background: #ffffffbd;
+        box-shadow: 4px 5px 27px 20px rgb(0 0 0 / 16%);
+        border-radius: 7px;
+        padding: 10px;
+
+        table {
+            width: 100%;
+            margin: 0;
+        }
+
+        tbody {
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+
+    &-mainRow {
+        margin: 15px 0;
+    }
+
+    &-headCell, &-cell {
+        width: 5%;
+        text-align: center;
+    }
+
+    &-headCell:nth-of-type(1), &-cell:nth-of-type(1) {
+        width: 5%;
+        text-align: center;
+    }
+
+    &-headCell:nth-of-type(2), &-cell:nth-of-type(2) {
+        width: 30%;
+        text-align: left;
+    }
+
+    &-cell {
+        height: 35px;
+        text-align: center;
+    }
+    
+    &-headCell--discount, &-cell--discount {
+        width: 15%;
+        text-align: center;
+    }
+    &-cell--discount:nth-of-type(2) {
+        // width: 85%;
+        // padding-left: 9%;
+        text-align: left;
+    }
+
+    
+
+    &-results {
+        margin: 20px;
+        text-align: right;
+    }
+
+
+}

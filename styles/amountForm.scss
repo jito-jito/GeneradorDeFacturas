@@ -1,0 +1,62 @@
+.amount {
+    &-modal {
+        @include flex;
+        position: absolute;
+        top: 0;
+        left: 0%;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.582);
+    }
+
+    &-container {
+        @include flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        width: 90vw;
+        height: 250px;
+        padding: 0 auto;
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px;
+        
+    }
+
+    &-title {
+        text-align: center;
+    }
+
+    &-form {
+        @include flex;
+        justify-content: space-around;
+        flex-direction: column;
+        width: 100%;
+
+        input {
+            margin: 30px 0;
+           
+        }
+        
+    }
+
+    &-buttons {
+        button {
+            width: 100px;
+            height: 40px;
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 10px;
+            border: none;
+        }
+    }
+    &-add {
+        background-color: #f3f4d3;
+    }
+
+    &-cancel {
+        margin-left: 25px;
+        color: white;
+        background-color: rgb(158, 55, 55);
+        
+    }
+
+}

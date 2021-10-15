@@ -1,0 +1,19 @@
+.main {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    // padding: 15px 15px;
+    @media screen and (min-width: 380px) {
+        padding: 0 25px;
+    
+    }
+    @media screen and (min-width: 500px) {
+        padding: 0 45px;
+    
+    }
+    @media screen and (min-width: 1200px) {
+        display: flex;
+        padding: 0 45px;
+    }
+    
+}
