@@ -1,7 +1,7 @@
 import { getData } from './db'
-import { parseData, insertHTML } from './renderData'
+import { addHTMLData } from './renderData'
 import { toggleModal, cacheProduct } from './modals'
-import { invoiceData, addItem } from './invoice'
+import { invoiceData, addItem, discountData } from './invoice'
 
 const productsBox = document.querySelector('.products-container')
 
@@ -16,10 +16,14 @@ function addProduct(e) {
 
   let name = this.querySelector('p').textContent
   let value = parseInt(this.querySelector('span').textContent)
+  // debugger
   cacheProduct = {
+    id: Number,
     name: name,
     value: value,
-    count: Number
+    totalValue: Number,
+    count: Number,
+    delete: false
   }
 
  
@@ -30,18 +34,15 @@ function addProduct(e) {
 async function init() {
 
   let data = await getData('Products')
-  let HTMLData = parseData(data, 'product')
-  insertHTML(HTMLData, productsBox)
-
+  discountData = await getData('Discounts')
+  console.log(discountData)
+  addHTMLData(data, 'product', productsBox)
+  
   let products = productsBox.querySelectorAll('.products-item')
-
   addListeners(products, 'click', addProduct)
 
 
-  console.log(invoiceData)
-  // console.log(productsBox)
-  // console.log(data)
-  // console.log(HTMLData)
+
 }
 
 init()

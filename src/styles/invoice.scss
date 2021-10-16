@@ -74,11 +74,37 @@
             font-size: 14px;
             font-weight: 700;
         }
+
+        
+    }
+    &-discount {
+        @include flex;
+        flex-direction: column;
+        p {
+            margin: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+        input {
+            border: 1px solid black;
+        }
+        input:focus {
+            border: 1px solid black;
+        }
     }
 
-    &-discount {
-        margin: 10px;
-        height: 45px;
+    &-discountBox {
+        @include flex;
+        flex-direction: column;
+
+        @media screen and (min-width:430px) {
+            flex-direction: row;
+        }
+    }
+
+    &-addDiscount {
+        margin: 15px;
+        height: 35px;
         background-color: #c8dac8;
     
     }
@@ -89,6 +115,8 @@
         width: 90px;
         background-color: #f3f4d3;
     }
+
+
 }
 
 

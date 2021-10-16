@@ -1,3 +1,5 @@
+import { addItem } from "./invoice"
+
 const amountModal = document.querySelector('.amount-modal')
 const cancelAmount = amountModal.querySelector('.amount-cancel')
 const formAmount = amountModal.querySelector('.amount-form')
@@ -50,13 +52,20 @@ function closeModal() {
     }
 }
 
+
+
+function close() {
+    amountModal.classList.remove('open')
+}
+
 function setAmount(e) {
     e.preventDefault()
-    debugger
 
     let count = parseInt(this.querySelector('input').value, 10)    
     cacheProduct.count = count
-    closeModal()
+    cacheProduct.totalValue = cacheProduct.value * cacheProduct.count
+    addItem(cacheProduct)
+    close()
 
    
 }
