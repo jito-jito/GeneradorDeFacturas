@@ -6,6 +6,26 @@ let templates = {
                 <span>${element.valor}</span>
             </figure> `
         )
+    },
+    Invoice: function () {
+        return (
+            `<tr class="table-row">
+                <td class="table-cell"><img src="./assets/images/delete.svg" alt=""></td>
+                <td class="table-cell">${element.name}</td>
+                <td class="table-cell">${element.amount}</td>
+                <td class="table-cell">${element.value}</td>
+                <td class="table-cell">${element.totalValue}</td>
+            </tr>`
+        )
+    },
+    Discount: function () {
+        return (
+            `<tr class="table-row--discount">
+                <td class="table-cell"><img src="./assets/images/delete.svg" alt=""></td>
+                <td class="table-cell--discount">${element.name}</td>
+                <td class="table-cell--discount">${element.percentage}</td>
+            </tr>`
+        )
     }
 
 }

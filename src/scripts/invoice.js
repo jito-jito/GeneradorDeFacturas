@@ -1,5 +1,6 @@
 
 let invoiceData = [];
+let discountData = [];
 
 function addItem() {
 
@@ -16,3 +17,5 @@ function printInvoice() {
 function addDiscount() {
 
 }
+
+export { invoiceData, addItem }

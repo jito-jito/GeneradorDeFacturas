@@ -1,6 +1,7 @@
 import { getData } from './db'
 import { parseData, insertHTML } from './renderData'
-import { toggleModal } from './modals'
+import { toggleModal, cacheProduct } from './modals'
+import { invoiceData, addItem } from './invoice'
 
 const productsBox = document.querySelector('.products-container')
 
@@ -13,6 +14,16 @@ function addProduct(e) {
   let thisToggleModal = toggleModal.bind(this, e)
   thisToggleModal()
 
+  let name = this.querySelector('p').textContent
+  let value = parseInt(this.querySelector('span').textContent)
+  cacheProduct = {
+    name: name,
+    value: value,
+    count: Number
+  }
+
+ 
+  
 
 }
 
@@ -27,7 +38,7 @@ async function init() {
   addListeners(products, 'click', addProduct)
 
 
-  
+  console.log(invoiceData)
   // console.log(productsBox)
   // console.log(data)
   // console.log(HTMLData)
