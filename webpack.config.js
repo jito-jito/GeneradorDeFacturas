@@ -30,6 +30,7 @@ module.exports = {
 
         }
     },
+    mode: 'development',
     module: {
         rules:
         // reglas para trabajar con diferentes tipos de archivos

@@ -47,11 +47,11 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         justify-items: center;
+        gap: 20px;
     }
 
     &-item {
-        display: flex;
-        align-items: center;
+        @include flex;
         flex-direction: column;
         width: 70px;
         height: 70px;

@@ -17,12 +17,12 @@ module.exports = {
         // dirección para guardar el archivo de salida
         path: path.resolve(__dirname, 'dist'),
         // nombre del archivo de salida
-        filename: '[name].[contenthash].js',
+        filename: '[name].js',
         // para agregar las imagenes que vienen de asset module en la dirección indicada
         assetModuleFilename: "assets/images/[hash][ext][query]"
     },
     // para ser más especifico en el modo de webpack a ejecutar
-    mode: 'development',
+    devtool: 'eval-source-map',
     // para activar el modo watch
     watch: true,
     //configuraciones a utilizar
