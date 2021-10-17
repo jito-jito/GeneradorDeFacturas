@@ -53,6 +53,7 @@
         border: none;
         box-shadow: 4px 5px 27px 20px rgba(0,0,0,0.1);
         background: white;
+        // background-image: url('../assets/images/invoice.svg');
 
         @media screen and (min-width: 650px) {
             display: none;
@@ -63,6 +64,9 @@
             width: 25px;
             height: 35px;
         }
+    }
+    &-menu.open {
+       background-image: url('../assets/images/backArrow.png');
     }
 
     &-form {

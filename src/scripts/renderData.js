@@ -20,10 +20,10 @@ let templates = {
     },
     Discount: function (element) {
         return (
-            `<tr class="table-row--discount">
+            `<tr class="table-row--discount" data-id=${element.nombre}>
                 <td class="table-cell delete"><img src="./assets/images/delete.svg" alt=""></td>
                 <td class="table-cell--discount">${element.nombre}</td>
-                <td class="table-cell--discount">${element.percentage}</td>
+                <td class="table-cell--discount">${element.percentage}%</td>
             </tr>`
         )
     }
@@ -76,4 +76,9 @@ function replaceHTMLData(data, node) {
     node.textContent = data
 }
 
-export { addHTMLData, replaceHTMLData }
+function addListeners(elements, listener, fn) {
+    elements.forEach((element) => element.addEventListener(listener, fn))
+}
+
+
+export { addHTMLData, replaceHTMLData, addListeners }

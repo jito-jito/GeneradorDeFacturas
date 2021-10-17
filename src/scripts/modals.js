@@ -1,4 +1,4 @@
-import { addItem } from "./invoice"
+import { addItem, cacheProduct } from "./invoice"
 
 const amountModal = document.querySelector('.amount-modal')
 const cancelAmount = amountModal.querySelector('.amount-cancel')
@@ -8,7 +8,7 @@ const body = document.querySelector('body')
 const invoiceModal = document.querySelector('.invoice-main')
 const invoiceMenu = document.querySelector('.invoice-menu')
 
-let cacheProduct = {}
+
 let isOpen = false;
 
 
