@@ -86,6 +86,6 @@ module.exports = {
                 }
             ]
         }),
-        // new Dotenv()
+        new Dotenv()
     ]
 }

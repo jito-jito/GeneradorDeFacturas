@@ -84,7 +84,7 @@ module.exports = {
                 }
             ]
         }),
-        // new Dotenv(),
+        new Dotenv(),
         new CleanWebpackPlugin()
     ],
     optimization: {

@@ -3,13 +3,13 @@ import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCcAdxiVzjU3RfffKu0AbcOr65p1eqaQuM",
+  apiKey: process.env.API_KEY,
   authDomain: "generador-de-facturas.firebaseapp.com",
   projectId: "generador-de-facturas",
   storageBucket: "generador-de-facturas.appspot.com",
-  messagingSenderId: "451855567870",
-  appId: "1:451855567870:web:8a892c42ddd9806b238eaf",
-  measurementId: "G-YB5VM5J9BC"
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.MEASUREMENT_ID
 };
 
 const app = initializeApp(firebaseConfig);
