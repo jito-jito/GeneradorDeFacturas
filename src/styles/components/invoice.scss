@@ -8,8 +8,7 @@
         height: 100vh;
         padding: 0 5%;
         box-sizing: border-box;
-        background: rgb(255,255,255);
-        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(243,244,211,1) 100%);
+        background: $color1;
 
         @media screen and (min-width: 650px) {
             display: block;
@@ -53,7 +52,6 @@
         border: none;
         box-shadow: 4px 5px 27px 20px rgba(0,0,0,0.1);
         background: white;
-        // 
 
         @media screen and (min-width: 650px) {
             display: none;
@@ -107,16 +105,16 @@
     }
 
     &-addDiscount {
-        margin: 15px;
         height: 35px;
+        margin: 15px;
         background-color: #c8dac8;
     
     }
 
     &-send {
-        margin: 25px;
         height: 45px;
         width: 90px;
+        margin: 25px;
         background-color: #f3f4d3;
     }
 
@@ -126,10 +124,10 @@
 
 .table {
     &-container {
+        padding: 10px;
         background: #ffffffbd;
         box-shadow: 4px 5px 27px 20px rgb(0 0 0 / 16%);
         border-radius: 7px;
-        padding: 10px;
 
         table {
             width: 100%;
@@ -171,13 +169,10 @@
         width: 15%;
         text-align: center;
     }
+
     &-cell--discount:nth-of-type(2) {
-        // width: 85%;
-        // padding-left: 9%;
         text-align: left;
     }
-
-    
 
     &-results {
         margin: 20px;

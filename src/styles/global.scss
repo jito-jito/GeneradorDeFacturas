@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
-
+$color1: linear-gradient(0deg, rgba(255,255,255,0.7567401960784313) 0%, rgba(243,244,211,1) 100%);
+$color-bright: rgb(255,255,255);
 $Fuente1: 'Roboto', sans-serif;
 
 @mixin flex {
@@ -11,11 +12,11 @@ $Fuente1: 'Roboto', sans-serif;
 
 
 
-@import './header.scss';
-@import './main.scss';
-@import './products.scss';
-@import './invoice.scss';
-@import'./amountForm.scss';
+@import './components/header.scss';
+@import './components/main.scss';
+@import './components/products.scss';
+@import './components/invoice.scss';
+@import'./components/modalAmount.scss';
 
 * {
     margin: 0;
@@ -29,8 +30,7 @@ body {
     font-size: 15px;
     box-sizing: border-box;
     font-family: $Fuente1;
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,0.7567401960784313) 0%, rgba(243,244,211,1) 100%);
+    background: $color1;
     @media screen and (min-width: 650px) {
         height: 100%;
         

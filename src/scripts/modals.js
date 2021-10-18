@@ -53,7 +53,6 @@ function closeModal() {
 }
 
 
-
 function close() {
     amountModal.classList.remove('open')
 }

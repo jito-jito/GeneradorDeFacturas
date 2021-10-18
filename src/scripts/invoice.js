@@ -1,5 +1,5 @@
-import { addHTMLData, replaceHTMLData } from "./renderData";
-import { toggleModal } from "./modals";
+import { addHTMLData, replaceHTMLData } from "./utils/renderData"
+import { toggleModal } from "./modals"
 
 
 const invoiceTable = document.querySelector('.table-products > tbody')

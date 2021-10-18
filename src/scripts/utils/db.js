@@ -16,12 +16,12 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
-// Get a list of cities from your database
+// Get a list of data from your database
 async function getData(name) {
-  const citiesCol = collection(db, name);
-  const citySnapshot = await getDocs(citiesCol);
-  const cityList = await citySnapshot.docs.map(doc => doc.data());
-  return cityList;
+  const dataCol = collection(db, name);
+  const dataSnapshot = await getDocs(dataCol);
+  const dataList = await dataSnapshot.docs.map(doc => doc.data());
+  return dataList;
 }
 
 
