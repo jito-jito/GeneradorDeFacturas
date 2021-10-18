@@ -1,0 +1,51 @@
+{
+    "Products": [
+       {
+            "id": "x2tT7kzbAT",
+            "nombre": "manzana",
+            "valor": 30
+       },
+       {
+            "id": "Ud5QbQWduK",
+            "nombre": "naranja",
+            "valor": 15
+        }, 
+        {
+            "id": "vi4jEfqveK",
+            "nombre": "sandia",
+            "valor": 13
+        }, 
+        {
+            "id": "Mah4PCiAHw",
+            "nombre": "zapallo",
+            "valor": 17
+        }, 
+        {
+            "id": "Lvtu8P6nK8",
+            "nombre": "mantequilla",
+            "valor": 25
+        }, 
+        {
+            "id": "jAf2UJCtBJ",
+            "nombre": "yogurt",
+            "valor": 3
+        }, 
+        {
+            "id": "PK2zXf8UAX",
+            "nombre": "galleta",
+            "valor": 4
+        }
+    ],
+    "Discounts": [
+        {
+            "id": "n7RjGJWtXd",
+            "nombre": "pepin",
+            "percentage": 15
+        },
+        {
+            "id": "8garHKFWEm",
+            "nombre": "platzi",
+            "percentage": 30
+        }
+     ]
+ }
