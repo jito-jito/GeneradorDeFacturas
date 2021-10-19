@@ -14,6 +14,8 @@
             display: block;
             position: relative;
             width: 100%;
+            height: 100%;
+            margin-top: 75px;
             padding: 0 7%;
             background: transparent;
         }
@@ -26,6 +28,7 @@
         @media screen and (min-width: 1200px) {
             width: 45%;
             height: 100%;
+            margin: 0;
             padding: 0;
         }
         
@@ -50,8 +53,8 @@
         margin: 0px 25px 25px 0;
         border-radius: 30px;
         border: none;
-        box-shadow: 4px 5px 27px 20px rgba(0,0,0,0.1);
-        background: white;
+        box-shadow: 4px 5px 27px 20px get-opacity($color-dark, 0.1);
+        background: get-opacity(rgb(238, 236, 236), 0.7);
 
         @media screen and (min-width: 650px) {
             display: none;
@@ -63,8 +66,8 @@
             height: 35px;
         }
     }
-    &-menu.open {
-       //
+    &-menu:hover {
+       background-color: $color-bright;
     }
 
     &-form {
@@ -107,15 +110,21 @@
     &-addDiscount {
         height: 35px;
         margin: 15px;
-        background-color: #c8dac8;
+        background-color: get-opacity($colorButton-2add, .7);
     
+    }
+    &-addDiscount:hover {
+        background: $colorButton-2add;
     }
 
     &-send {
         height: 45px;
         width: 90px;
         margin: 25px;
-        background-color: #f3f4d3;
+        background-color: get-opacity($colorButton-add, .7);
+    }
+    &-send:hover {
+        background: $colorButton-add;
     }
 
 
@@ -125,7 +134,7 @@
 .table {
     &-container {
         padding: 10px;
-        background: #ffffffbd;
+        background: $color-table;
         box-shadow: 4px 5px 27px 20px rgb(0 0 0 / 16%);
         border-radius: 7px;
 
@@ -147,31 +156,34 @@
 
     &-headCell, &-cell {
         width: 5%;
+        height: 35px;
         text-align: center;
+    }
+    &-cell:nth-of-type(1):hover {
+        cursor: pointer;
     }
 
-    &-headCell:nth-of-type(1), &-cell:nth-of-type(1) {
-        width: 5%;
-        text-align: center;
-    }
 
     &-headCell:nth-of-type(2), &-cell:nth-of-type(2) {
         width: 30%;
         text-align: left;
     }
 
-    &-cell {
-        height: 35px;
-        text-align: center;
-    }
-    
+
     &-headCell--discount, &-cell--discount {
-        width: 15%;
+        width: 5%;
         text-align: center;
     }
 
-    &-cell--discount:nth-of-type(2) {
+
+    &-headCell--discount:nth-of-type(2), &-cell--discount:nth-of-type(2) {
+        width: 30%;
         text-align: left;
+    }
+
+    &-headCell--discount:nth-of-type(3), &-cell--discount:nth-of-type(3) {
+        width: 15%;
+        text-align: center;
     }
 
     &-results {

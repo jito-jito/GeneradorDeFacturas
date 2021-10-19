@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
 $color1: linear-gradient(0deg, rgba(255,255,255,0.7567401960784313) 0%, rgba(243,244,211,1) 100%);
+$color-table:#fff;
 $color-bright: rgb(255,255,255);
+$color-dark: rgb(0,0,0);
 $Fuente1: 'Roboto', sans-serif;
+
+$colorButton-add: #f3f4d3;
+$colorButton-2add: #c8dac8;
+$colorButton-cancel: rgb(158, 55, 55);
+
+
 
 @mixin flex {
     display: flex;
@@ -10,6 +18,9 @@ $Fuente1: 'Roboto', sans-serif;
     align-items: center;
 }
 
+@function get-opacity($color, $percentage) {
+    @return rgba($color, $percentage);
+}
 
 
 @import './components/header.scss';
@@ -26,13 +37,14 @@ $Fuente1: 'Roboto', sans-serif;
 body {
     width: 100%;
     height: 100vh;
-    padding-top: 20px;
+    padding: 20px 0 0 0;
     font-size: 15px;
     box-sizing: border-box;
     font-family: $Fuente1;
     background: $color1;
     @media screen and (min-width: 650px) {
         height: 100%;
+        
         
     }
     @media screen and (min-width: 1200px) {

@@ -16,7 +16,6 @@ let invoiceData = [];
 let cacheProduct = {};
 let discountData = [];
 let discount = [];
-let totalPrice;
 
 
 
@@ -69,12 +68,17 @@ function addDiscount(e) {
     e.preventDefault()
     let inputData = this.parentNode.querySelector('input').value
     let discuntIndex = discountData.findIndex((element) => element.nombre == inputData)
-    discount.push(discountData[discuntIndex])
+    
     //debugger
     if (discuntIndex === -1) {
         console.log('no discount')    
     } else {
-        addHTMLData([discountData[discuntIndex]], 'discount', discountTable)
+        let newDiscount = {
+            ...discountData[discuntIndex],
+            id: discount.length + 1
+        }
+        discount.push(newDiscount)
+        addHTMLData([newDiscount], 'discount', discountTable)
         calculate()
         let discountItem = discountTable.querySelector('.table-row--discount:last-child > .delete')
         discountItem.addEventListener('click', removeDiscount)
@@ -87,16 +91,17 @@ function removeDiscount(e) {
     let idItem = this.parentElement.dataset.id
     this.parentElement.remove()
 
-    let findIndex = discount.findIndex((data) => data.nombre == idItem)
+    let findIndex = discount.findIndex((data) => data.id == idItem)
     discount[findIndex] = {...discount[findIndex], delete: true}
         
 
 
     //debugger
-    let newDiscountData = discount.filter((data) => !data.delete === true)
+    let newDiscountData = discount.filter((data) => !data.delete)
     discount = newDiscountData
     calculate()
 }
+
 
 function calculate() {
     let totalInvoice = 0;
@@ -106,9 +111,8 @@ function calculate() {
     })
 
     if(discount.length >= 1 && invoiceData.length >= 1) {
-
-        
         totalInvoice = totalInvoice - ((totalInvoice * discount[0].percentage) / 100)
+    
     }
     
     
@@ -117,14 +121,42 @@ function calculate() {
 }
 
 function sendInvoice(e) {
-    //e.preventDefault()
-    alert('aquí se devería imprimir la factura!!!, se reiniciará todo..')
-    invoiceData = []
+    if(invoiceData.length >= 1) {
+        alert('Factura creada correctamente')
+        invoiceData = []
+
+    } else {
+        e.preventDefault()
+    }
 }
 
 
 
 export { invoiceData, addItem, addItemInCache, discountData, cacheProduct }
+
+
+
+
+
+
+
+
+// function removeItem(item) {
+//     debugger
+//     let idItem = this.parentElement.dataset.id
+//     this.parentElement.remove()
+
+//     let findIndex = item.findIndex((data) => data.id == idItem)
+//     item[findIndex] = {...item[findIndex], delete: true}
+        
+
+
+//     //debugger
+//     let newDiscountData = item.filter((data) => !data.delete)
+//     item = newDiscountData
+//     calculate()
+// }
+
 
 
 

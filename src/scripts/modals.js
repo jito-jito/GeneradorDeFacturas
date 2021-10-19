@@ -23,7 +23,7 @@ function toggleModal(e) {
     let isInvoice = this.classList.contains('invoice-menu')
     let isAmount =  this.classList.contains('products-item')
     let isBody = e.target.classList.contains('amount-modal')
-
+    
     if(isInvoice) {
         console.log('isInvoice')
         invoiceModal.classList.toggle('open')
@@ -35,6 +35,8 @@ function toggleModal(e) {
         console.log('close all')
         amountModal.classList.remove('open')
         invoiceModal.classList.remove('open')
+    } else {
+
     }
 
     isOpen = !isOpen
@@ -53,9 +55,6 @@ function closeModal() {
 }
 
 
-function close() {
-    amountModal.classList.remove('open')
-}
 
 function setAmount(e) {
     e.preventDefault()
@@ -64,7 +63,7 @@ function setAmount(e) {
     cacheProduct.count = count
     cacheProduct.totalValue = cacheProduct.value * cacheProduct.count
     addItem(cacheProduct)
-    close()
+    amountModal.classList.toggle('open')
 
    
 }
