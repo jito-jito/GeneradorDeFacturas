@@ -1,10 +1,13 @@
 let templates = {
     Product: function (element) {
         return (
-            `<figure class="products-item">
+            `<div class="products-item">
+                <figure>
+                    <img src=${element.photo} alt="">
+                </figure>
                 <p>${element.nombre}</p>
                 <p>$<span>${element.valor}</span></p>
-            </figure> `
+            </div>`
         )
     },
     Invoice: function (element) {
