@@ -9,7 +9,7 @@ Puedes ver el resultado del proyecto [aquí.](https://jito-jito.github.io/Genera
 
 Este diagrama de flujo me ayudó a crear la lógica de la aplicación:
 
-![generador de facturas drawio (1)](https://user-images.githubusercontent.com/75919670/137657959-36bf1d4f-88d3-4120-9fce-3092a31f315d.png)
+![generador de facturas drawio]("./src/assets/images/generador de facturas.drawio.png")
 
 ## Entorno de funcionamiento
 
