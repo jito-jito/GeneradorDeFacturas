@@ -27,7 +27,8 @@ $colorButton-cancel: rgb(158, 55, 55);
 @import './components/main.scss';
 @import './components/products.scss';
 @import './components/invoice.scss';
-@import'./components/modalAmount.scss';
+@import './components/modalAmount.scss';
+@import './components/states.scss';
 
 * {
     margin: 0;

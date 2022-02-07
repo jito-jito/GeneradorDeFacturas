@@ -1,4 +1,9 @@
 let templates = {
+    Loading: function (element) {
+        return (
+            `<div class="lds-facebook"><div></div><div></div><div></div></div>`
+        )
+    },
     Product: function (element) {
         return (
             `<div class="products-item">
@@ -36,6 +41,9 @@ let templates = {
 function chooseTemplate(templateName) {
     let template
     switch(templateName) {
+        case 'loading' :
+            template = templates.Loading
+            break;
         case 'product' :
             template = templates.Product
             break;
@@ -58,6 +66,12 @@ function parseData(array, templateName) {
     })
   
     return HTMLString
+}
+
+function removeChilds(element) {
+    while(element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
 }
 
 function insertHTML(arrayHTML, node) {
@@ -84,4 +98,4 @@ function addListeners(elements, listener, fn) {
 }
 
 
-export { addHTMLData, replaceHTMLData, addListeners }
+export { addHTMLData, replaceHTMLData, addListeners, removeChilds }

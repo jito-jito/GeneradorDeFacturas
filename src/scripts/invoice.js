@@ -1,5 +1,7 @@
-import { addHTMLData, replaceHTMLData } from "./utils/renderData"
+import { addHTMLData, replaceHTMLData, removeChilds } from "./utils/renderData"
 import { toggleModal } from "./modals"
+import { createPdf } from "./utils/pdf";
+
 
 
 const invoiceTable = document.querySelector('.table-products > tbody')
@@ -48,7 +50,7 @@ function addItemInCache(e) {
         count: Number,
         delete: false
     }
-
+    // to finaly add products go to invoice/setAmount function
 }
 
 function removeItem(e) {
@@ -120,19 +122,26 @@ function calculate() {
     replaceHTMLData(totalInvoice, results)
 }
 
-function sendInvoice(e) {
+async function sendInvoice(e) {
+    // e.preventDefault()
+    
     if(invoiceData.length >= 1) {
-        alert('Factura creada correctamente')
+        await createPdf(invoiceData, discount, results.textContent)
+        alert('Factura creada exitosamente!')
         invoiceData = []
+        await reload()
 
     } else {
-        e.preventDefault()
+        alert('Añade productos para crear una factura!')
     }
 }
 
+function reload() {
+    location.reload();
+}
 
 
-export { invoiceData, addItem, addItemInCache, discountData, cacheProduct }
+export { invoiceData, addItem, addItemInCache, discountData, discount, cacheProduct }
 
 
 
